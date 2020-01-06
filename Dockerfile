@@ -53,7 +53,7 @@ RUN cd ${HOME}/.dotnet/tools
 # Enable telemetry once we install jupyter for the image
 ENV DOTNET_TRY_CLI_TELEMETRY_OPTOUT=false
 
-WORKDIR /home
+WORKDIR ${HOME}
 
 EXPOSE 8080
 
