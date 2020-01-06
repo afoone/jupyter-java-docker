@@ -3,7 +3,7 @@ services:
     master: 
         build: .
         volumes: 
-            - ./conf/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+            - ./conf/jupyter_notebook_config.py:/home/afoone/.jupyter/jupyter_notebook_config.py
             - ../docs:/home/
         ports: 
             - 8099:8080
@@ -15,7 +15,7 @@ services:
     one: 
         build: .
         volumes: 
-            - ./conf/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+            - ./conf/jupyter_notebook_config.py:/home/afoone/.jupyter/jupyter_notebook_config.py
             - ../docs/one:/home/
         environment:
             - "VIRTUAL_HOST=one.once.mainserver.iprocuratio.com"
