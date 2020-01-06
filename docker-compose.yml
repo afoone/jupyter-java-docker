@@ -6,9 +6,10 @@ services:
             - ./conf/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
             - ./docs:/home/
         ports: 
-            - 8080:8080
+            - 80809:8080
         environment:
             - "VIRTUAL_HOST=master.once.mainserver.iprocuratio.com"
+            - "VIRTUAL_PORT=8080"
         networks:
             - frontnet
     one: 
@@ -16,10 +17,9 @@ services:
         volumes: 
             - ./conf/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
             - ./docs/one:/home/
-        ports: 
-            - 8081:8080
         environment:
             - "VIRTUAL_HOST=one.once.mainserver.iprocuratio.com"
+            - "VIRTUAL_PORT=8080"
         networks:
             - frontnet
 
