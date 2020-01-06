@@ -65,7 +65,7 @@
 #  token login mechanism.
 #  
 #  This can be set to false to prevent changing password from the UI/API.
-#c.NotebookApp.allow_password_change = True
+c.NotebookApp.allow_password_change = True
 
 ## Allow requests where the Host header doesn't point to a local server
 #  
@@ -273,7 +273,7 @@
 #    from notebook.auth import passwd; passwd()
 #  
 #  The string should be of the form type:salt:hashed-password.
-#c.NotebookApp.password = ''
+c.NotebookApp.password = 'sha1:daa3efe373c5:44cbbb6d5c94c4df8a87785e257020907720541a'
 
 ## Forces users to use a password for the Notebook server. This is useful in a
 #  multi user environment, for instance when everybody in the LAN can access each
@@ -337,7 +337,7 @@
 #  
 #  Setting to an empty string disables authentication altogether, which is NOT
 #  RECOMMENDED.
-c.NotebookApp.token = 'password'
+#c.NotebookApp.token = 'password'
 
 ## Supply overrides for the tornado.web.Application that the Jupyter notebook
 #  uses.
