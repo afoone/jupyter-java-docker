@@ -1,8 +1,26 @@
 version: "3.0"
 services: 
-    jupyter: 
+    master: 
         build: .
         volumes: 
             - ./conf/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+            - ./docs:/home/
         ports: 
             - 8080:8080
+        networks:
+            - frontnet
+    one: 
+        build: .
+        volumes: 
+            - ./conf/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+            - ./docs/one:/home/
+        ports: 
+            - 8081:8080
+        networks:
+            - frontnet
+
+networks: 
+    frontnet:
+        external:
+            name: frontnet
+        
