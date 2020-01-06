@@ -7,6 +7,8 @@ services:
             - ./docs:/home/
         ports: 
             - 8080:8080
+        environment:
+            - "VIRTUAL_HOST=master.once.mainserver.iprocuratio.com"
         networks:
             - frontnet
     one: 
@@ -16,6 +18,8 @@ services:
             - ./docs/one:/home/
         ports: 
             - 8081:8080
+        environment:
+            - "VIRTUAL_HOST=one.once.mainserver.iprocuratio.com"
         networks:
             - frontnet
 
